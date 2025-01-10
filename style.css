@@ -1,0 +1,253 @@
+:root {
+    --primary-color: #8b5cf6;
+    --primary-hover: #7c3aed;
+    --bg-color: #1a1b1e;
+    --card-bg: #2a2b2e;
+    --text-color: #e5e7eb;
+    --text-secondary: #9ca3af;
+    --border-color: #374151;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    
+    /* Password strength colors */
+    --strength-weak: #ef4444;
+    --strength-fair: #f59e0b;
+    --strength-good: #10b981;
+    --strength-strong: #6366f1;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.5;
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    gap: 0.5rem;
+  }
+  
+  .shield-icon {
+    color: var(--primary-color);
+  }
+  
+  main {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+  }
+  
+  @media (min-width: 768px) {
+    main {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  section {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+  }
+  
+  input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+  }
+  
+  .password-input {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .password-input input {
+    flex: 1;
+  }
+  
+  /* Password Strength Meter */
+  .password-strength {
+    margin-top: 0.5rem;
+  }
+  
+  .strength-meter {
+    height: 4px;
+    background-color: var(--border-color);
+    border-radius: 2px;
+    margin-top: 0.25rem;
+  }
+  
+  .strength-meter-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  
+  .strength-text {
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+  }
+  
+  .weak { background-color: var(--strength-weak); }
+  .fair { background-color: var(--strength-fair); }
+  .good { background-color: var(--strength-good); }
+  .strong { background-color: var(--strength-strong); }
+  
+  .icon-button {
+    padding: 0.5rem;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+  }
+  
+  .icon-button:hover {
+    background: var(--border-color);
+    color: var(--text-color);
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 0.625rem 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .submit-btn:hover {
+    background: var(--primary-hover);
+  }
+  
+  .password-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .password-item {
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: var(--bg-color);
+  }
+  
+  .password-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+  
+  .password-item-title {
+    font-weight: 500;
+    font-size: 1.125rem;
+  }
+  
+  .password-item-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .password-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .password-item-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+  
+  .password-item-value {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .copy-btn, .delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    color: var(--text-secondary);
+  }
+  
+  .copy-btn:hover {
+    color: var(--primary-color);
+  }
+  
+  .delete-btn:hover {
+    color: var(--strength-weak);
+  }
+  
+  .website-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .website-link:hover {
+    color: var(--primary-hover);
+  }
